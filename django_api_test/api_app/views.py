@@ -8,6 +8,16 @@ from .serializers import ArticleSerializer
 
 # Create your views here.
 
+#model viewsets
+class ArticleViewSet(viewsets.ModelViewSet):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    
+
+
+
+'''
+#generic viewsets
 class ArticleViewSet(viewsets.GenericViewSet, 
                      mixins.ListModelMixin, 
                      mixins.CreateModelMixin,  
@@ -17,9 +27,7 @@ class ArticleViewSet(viewsets.GenericViewSet,
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
 
-
-
-
+'''
 
 '''
 class ArticleViewSet(viewsets.ViewSet):
